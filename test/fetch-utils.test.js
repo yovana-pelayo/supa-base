@@ -19,30 +19,30 @@ test("getMovies should return the list of movies", async (expect) => {
   expect.equal(resp.length, 13);
 });
 
-skip("getMoviesWithDirector returns movies with director", async (expect) => {
+test("getMoviesWithDirector returns movies with director", async (expect) => {
   const resp = await getMoviesWithDirector();
   expect.equal(resp.length, 13);
   expect.notEqual(resp[0].directors, undefined);
 });
 
-skip("getDirectorNames returns the list of director names", async (expect) => {
+test("getDirectorNames returns the list of director names", async (expect) => {
   const resp = await getDirectorNames();
   expect.equal(resp.length, 9);
   expect.notEqual(resp[0].name, undefined);
   expect.equal(Object.keys(resp[0]).length, 1); // should ONLY return the name
 });
 
-skip("getMovieById returns a specific movie by ID", async (expect) => {
+test("getMovieById returns a specific movie by ID", async (expect) => {
   const resp = await getMovieById(2);
   expect.equal(resp.title, "Episode V - The Empire Strikes Back");
 });
 
-skip("getMovieByTitle should match using title", async (expect) => {
+test("getMovieByTitle should match using title", async (expect) => {
   const resp = await getMovieByTitle("Episode V - The Empire Strikes Back");
   expect.equal(resp.id, 2);
 });
 
-skip("getOldestMovie returns Episode IV", async (expect) => {
+test("getOldestMovie returns Episode IV", async (expect) => {
   const resp = await getOldestMovie();
   expect.equal(resp.title, "Episode IV - A New Hope");
 });
